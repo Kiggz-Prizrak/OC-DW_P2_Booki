@@ -1,5 +1,7 @@
 /* Définition des polices personnalisées */
 
+/*Éléments de la page*/
+
 p {
     color: rgb(95, 91, 91)
 }
@@ -15,6 +17,29 @@ h3 {
     color: black;
     font-size: 30;
 }
+
+
+article {
+    overflow: hidden;
+    border: 8px white solid;
+}
+
+img { 
+    width: 100%;
+    
+}
+
+.étoile
+{
+    list-style-type: none;
+    display: flex;
+
+}
+
+
+
+/*Header*/
+
 .en-tête {
     display: flex;
     justify-content: space-between;
@@ -28,7 +53,7 @@ nav li {
     margin-right: 80px;
 }
 
-nav an {
+nav a {
     font-size: 1.3em;
     color: #181818;
     padding-bottom: 3px;
@@ -44,6 +69,16 @@ nav a:hover {
     width: 120px;
     height: 58px;
 }
+
+/*Main*/
+
+main {
+    background-color: white;
+}
+
+/*searh & filtre*/
+    /*Filtres*/
+
 .filter {
     margin : 12px; 
     background-color: white;
@@ -63,49 +98,59 @@ nav a:hover {
     padding : 15px;
 }
 
+   
 
-article {
-    overflow: hidden;
-    border: 8px white solid;
-}
+
+    /*Search*/
+
+/*Section hébergement*/
 
 #articlesHebergements {
     display: flex;
     justify-content: center;
+    gap: 25px;
 }
 
-.hébergementMarseilles {
+    /*Hébergement à Marseilles*/
+.hébergementMarseilles  {
+   
     background-color: #F2F2F2 ;
     padding : 15px;
     margin : 15px; 
     border-radius: 25px;
-    width: 70%;
+    flex-grow: 2;
+    
 }
 
+.hébergementMarseilles section{
+    padding: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 .hébergementMarseilles article {
+    width: 30%;
+    margin: 10px;
     display: flex ;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
+    flex-direction: column;
     border-radius: 24.8px;
     background-color : white;
-    text-align: justify;
     box-shadow: 2px 2px 10px black;
 }
-.hébergementMarseilles img {
+
+ /*Hébergement populaire*/
     
-    width: 686px;
-    height :288px;  
-}
-.populaires {
+ .populaires {
     background-color: #F2F2F2 ;
     padding : 15px;
     border-radius: 24.8px;
-    width: 30%;
+    margin : 15px;
 }
 .populaires article {
-    
+    display: flex;
+    flex-direction: row;
     margin : 15px; 
     border-radius: 24.8px;
     background-color : white;
@@ -115,9 +160,10 @@ article {
 
 .populaires img {
     position: relative;
-    width: 686px;
-    height :288px;
 }
+
+/*section activités*/
+
 .activités {
     background-color: #F2F2F2;
     padding : 15px;
@@ -133,18 +179,12 @@ article {
     margin : 15px; 
     border-radius: 25px;
 }
-.activités img{
-    width: ;
-}
 
-main {
-    background-color: white;
-}
+/*Footer*/
 
 footer {
     background-color: #F2F2F2;
 }
 
-img { 
-    border-radius: 21px;
-}
+
+
