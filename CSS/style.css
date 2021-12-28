@@ -10,6 +10,9 @@ p,li,span {
     color: black;
     font-family: 'Raleway', sans-serif;
 }
+
+
+
 h1 {
     color: black;
     font-size: 30px;
@@ -36,7 +39,8 @@ a{
     box-sizing: border-box;
 }
 article {
-    overflow: hidden;  
+    overflow: hidden;
+    cursor: pointer;  
 }
 i.starBlue{
     color : #0065FC;   
@@ -79,7 +83,7 @@ nav ul {
 nav li {
     padding: 40px;
     text-align: center;
-    width: 50%;
+    
     margin: 0%; 
 }
 
@@ -158,6 +162,7 @@ nav a:hover{
     border-top-right-radius: 15px ;
     border-bottom-right-radius: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .iconSearch{
@@ -214,6 +219,7 @@ margin: 10px;
     border-radius: 100px;
     border: 2px #F2F2F2 solid;
     transition: all 1s ease-out;
+    cursor: pointer;
 }
 
 .filter p{
@@ -449,7 +455,7 @@ margin: 10px;
 
 .activitesColumns{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -459,8 +465,7 @@ margin: 10px;
     justify-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 25%; 
-    padding: 30px;
+    width: 23%; 
 }
 
 .activitesColumns article{
@@ -509,12 +514,16 @@ footer {
 
 .footerContent ,li,h3{
     margin: 15px;
+    cursor: pointer;
+}
+
+.footerContent li:hover{
+    color: #0065FC;
+    font-weight: bold;
 }
 
 .footerColumn{
-    padding-top: 1%;
-    padding-left: 6%;
-    padding-right: 13%;
+    flex: 1;
 }
 
 
@@ -535,6 +544,10 @@ footer {
         
         width: 100%;
         margin: 0%;
+    }
+
+    .footerColumn{
+        padding-right : 0%;
     }
 
 @media all and (max-width: 700px)
