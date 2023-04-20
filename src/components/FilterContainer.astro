@@ -1,0 +1,23 @@
+---
+import Filter from "./Filter.astro";
+const fetchData = await fetch('http://localhost:3000/mock/tags.json');
+const list = await fetchData.json()
+---
+
+<div class="filterContainer">
+  <h2>Filtres</h2>
+  <ul class="filterList">
+  {list.tags?.map((e) => ( <Filter  type={e?.tag} icon={e?.icon}/>) )}
+  </ul>
+</div>
+
+<style>
+  .filterContainer {
+    display: flex;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+  }
+
+</style>

@@ -1,0 +1,20 @@
+{
+  "tags": [
+    {
+      "tag": "Économique",
+      "icon": "fa-solid fa-money-bill-wave"
+    },
+    {
+      "tag": "Famillial",
+      "icon": "fa-solid fa-person"
+    },
+    {
+      "tag": "Romantique",
+      "icon": "fa-solid fa-heart"
+    },
+    {
+      "tag": "Nos pépites",
+      "icon": "fa-solid fa-fire"
+    }
+  ]
+}

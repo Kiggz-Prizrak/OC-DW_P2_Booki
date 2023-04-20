@@ -1,0 +1,99 @@
+---
+import PopulairesCard from "./PopulairesCard.astro";
+const fetchData = await fetch("http://localhost:3000/mock/hebergements.json");
+const list = await fetchData.json();
+
+const data = list.hebergements.filter((e) => e.ratings == 5);
+---
+
+<div class="populaireContainer">
+  <div class="title">
+    <h2>Les plus populaires</h2>
+    <span><i class="fa-solid fa-chart-line"></i></span>
+  </div>
+
+  <ul class="hebergementsList">
+    {
+      data.map((e) => (
+        <PopulairesCard
+          name={e.name}
+          price={e.price}
+          ratings={e.ratings}
+          image={e.image}
+        />
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .populaireContainer {
+    background: #f2f2f2;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 15px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title span {
+    color: #0065fc;
+    font-size: 20px;
+  }
+
+  .hebergementsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .title {
+    display: flex;
+  }
+
+  h2 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .title span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+ @media only screen and (max-width: 1385px) {
+    .hebergementsList {
+      flex-direction: row;
+    }
+  }
+
+  @media only screen and (max-width: 615px) {
+      .hebergementsList {
+       justify-content: center;
+      }
+    
+    }
+
+  /*
+  @media only screen and (min-width: 1440px) {
+    .hebergementsList {
+      flex-direction: row;
+    }
+  }
+
+  @media only screen and (max-width: 1020px) {
+    .hebergementsList {
+      width: 924px;
+      flex-direction: row;
+    }
+  } */
+</style>

@@ -1,0 +1,29 @@
+---
+import ActivityCard from ".//ActivityCard.astro";
+
+const fetchData = await fetch('http://localhost:3000/mock/activity.json');
+const list = await fetchData.json()
+
+---
+
+<div class="activityContainer">
+  <h2>Activités à Marseilles</h2>
+  <ul>
+
+    {
+      list.activity.map((e) => (
+        <ActivityCard place={e.name} image={e.picture}/>
+      ))
+    }
+
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+</style>

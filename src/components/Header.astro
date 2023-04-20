@@ -1,0 +1,34 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); 
+---
+<header>
+  <img class="logo" src="./booki_logo.png" alt="booki">
+  <nav>
+    <a class={currentPath === "" ? "active" : ""} href="/">Home</a>
+    <a class={currentPath === "activity" ? "active" : ""} href="/activity">activity</a>
+  </nav>
+</header>
+
+
+<style>
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+  }
+  .active {
+    border-top: 2px solid #0065FC;
+    color: #0065FC;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 61px;
+  }
+
+</style>

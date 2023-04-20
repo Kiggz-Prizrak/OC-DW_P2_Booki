@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ButtonLocation from "../components/ButtonLocation.astro";
+import FilterContainer from "../components/FilterContainer.astro";
+import HebergementsContainer from "../components/HebergementsContainer.astro";
+import PopulairesContainer from "../components/PopulairesContainer.astro";
+import ActivityContainer from "../components/ActivityContainer.astro";
+
+// const fetchHebergements = await fetch('http://localhost:3000/mock/hebergements.json');
+// const herbergementsList = await fetchHebergements.json()[0]
+// console.log(herbergementsList)
+---
+
+<Layout title="Bienvenue sur Booki">
+  <main>
+    <h1>Trouvez votre hébergement pour vos vacances de rêve</h1>
+    <p>En plein centre-ville ou en pleine nature</p>
+  </main>
+  <ButtonLocation />
+  <FilterContainer />
+  <div class="description">
+    <span><i class="fa-solid fa-info"></i></span>
+    <p>Plus de 500 logements disponibles dans cette ville</p>
+  </div>
+  <section>
+  <HebergementsContainer />
+  <PopulairesContainer />
+  </section>
+  
+  <ActivityContainer />
+</Layout>
+
+<style>
+ 
+  h1 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  p {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .description {
+    display: flex;
+    align-items: center;
+
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .description span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d9d9d9;
+    color: #0065fc;
+    border-radius: 100%;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+
+   section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 1385px) {
+    section {
+      flex-direction: column;
+    }
+
+  }
+
+     
+
+</style>

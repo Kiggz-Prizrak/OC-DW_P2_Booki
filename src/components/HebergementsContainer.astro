@@ -1,0 +1,56 @@
+---
+import HebergementsCard from "./HebergementsCard.astro";
+const fetchData = await fetch("http://localhost:3000/mock/hebergements.json");
+const list = await fetchData.json();
+---
+
+<div class="hebergementsContainer">
+  <h2>Hébergements à Marseilles</h2>
+  <ul class="hebergementsList">
+    {
+      list.hebergements.map((e, i) => {
+        if (i < 6)
+          return (
+            <HebergementsCard
+              name={e.name}
+              price={e.price}
+              ratings={e.ratings}
+              image={e.image}
+            />
+          );
+      })
+    }
+  </ul>
+  <button class="showMoreButton">Afficher plus</button>
+</div>
+
+<style>
+  .hebergementsContainer {
+    background: #f2f2f2;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 15px;
+  }
+
+  .hebergementsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+   @media only screen and (min-width: 1385px) {
+    .hebergementsList {
+      max-width: 924px;
+    }
+  }
+    @media only screen and (max-width: 615px) {
+      .hebergementsList {
+       justify-content: center;
+       flex-direction: column;
+      }
+    
+    }
+
+</style>

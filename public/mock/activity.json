@@ -1,0 +1,20 @@
+{
+  "activity": [
+    {
+      "name": "Vieux-Port",
+      "picture": "reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"
+    },
+    {
+      "name": "Fort de Pomègues",
+      "picture": "paul-hermann-QFTrLdQIRhI-unsplash.jpg"
+    },
+    {
+      "name": "Fort National de Calangues",
+      "picture": "kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
+    },
+    {
+      "name": "Notre-Dame-De-La-Garde",
+      "picture": "florian-wehde-xW9e8gdotxI-unsplash.jpg"
+    }
+  ]
+}

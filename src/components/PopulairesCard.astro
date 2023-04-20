@@ -1,0 +1,76 @@
+---
+import { spreadAttributes } from "astro/dist/runtime/server";
+
+const { name, price, ratings, image } = Astro.props;
+---
+
+<li class="card">
+  <img src={`./images/hebergements/${image}`} />
+  <div class="cardData">
+    <div>
+      <h3>{name}</h3>
+      <p>Nuit à partir de {price}€</p>
+    </div>
+
+    <ul id="rating" data-rating={"ratings"} class="rating">
+      <li class={1 <= ratings ? "blue" : "grey"}>
+        <i class="fa-solid fa-star"></i>
+      </li>
+      <li class={2 <= ratings ? "blue" : "grey"}>
+        <i class="fa-solid fa-star"></i>
+      </li>
+      <li class={3 <= ratings ? "blue" : "grey"}>
+        <i class="fa-solid fa-star"></i>
+      </li>
+      <li class={4 <= ratings ? "blue" : "grey"}>
+        <i class="fa-solid fa-star"></i>
+      </li>
+      <li class={5 <= ratings ? "blue" : "grey"}>
+        <i class="fa-solid fa-star"></i>
+      </li>
+    </ul>
+  </div>
+</li>
+
+<style>
+  .card {
+    box-shadow: 1px 1px 10px #858585;
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 20px;
+    padding: 7px;
+    max-width: 369px;
+    min-width: 250px;
+    width: 100%;
+    height: 144px;
+    display: flex;
+  }
+  
+  h3, p {
+    margin: 5px 0px;
+    padding-left: 13px;
+  }
+
+  ul {
+    display: flex;
+      padding-left: 13px;
+
+  }
+  .grey {
+    color: #f2f2f2;
+  }
+  .blue {
+    color: #0065fc;
+  }
+
+  img {
+    border-radius: 20px 0px 0px 20px;
+    width: 111.67px;
+    height: 100%;
+  }
+  .cardData {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+</style>
